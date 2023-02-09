@@ -8,7 +8,7 @@ import { Flex, Text, Link } from '@chakra-ui/react'
 
 interface InfoItemProps{
   type:string;
-  production:string;
+  production:string | undefined;
 }
 export function InfoItem({type,production}:InfoItemProps){
   
