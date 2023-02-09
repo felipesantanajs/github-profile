@@ -5,11 +5,11 @@ interface ButtonProps{
   value: string;
   handleGetDatas?: () => void
   type?:string;
-  to?: string;
+  linkTo?: string | undefined;
 }
 
-export function Button({value,handleGetDatas, type, to}:ButtonProps){
-  if(type === "link") return <ButtonChackra as={Link} variant='outline' to={to} maxW="320" w="100%" >{value}</ButtonChackra>
+export function Button({value,handleGetDatas, type, link}:ButtonProps){
+  if(type === "link") return (<ButtonChackra as={Link} variant='outline' linkTo={link} maxW="320" w="100%" >{value}</ButtonChackra>)
   
   return <ButtonChackra  colorScheme='pink' size="md" onClick={handleGetDatas}>{value}</ButtonChackra>
 }

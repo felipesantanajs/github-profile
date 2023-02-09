@@ -15,15 +15,15 @@ export function Profile() {
     return b.stargazers_count- a.stargazers_count
   })
 
-  console.log('datas->', getDatas);
-
-  console.log('repos->', getRepos);
-  // console.log(reposSorted)
+  // Consoles
+  // console.log('datas->', getDatas);
+  // console.log('repos->', getRepos);
+  
   if (getDatas.login !== "") {
     return (
       <Flex p={10} alignItems="center" justifyContent="center" flexDirection="column">
 
-        <Button to="/" type="link" value="Voltar" />
+        <Button linkTo="/" type="link" value="Voltar" />
         
         <Flex bg="gray.800" mt={4} p="8" maxW={600} w="100%" borderRadius={8} justifyContent="center" alignItems="center" flexDirection="column">
           <Image src={getDatas.avatar_url} alt='Dan Abramov' w="52" border="4px" borderColor="gray.400" borderRadius="100%" />
@@ -46,14 +46,14 @@ export function Profile() {
           </Flex>
 
           <Flex mt={10} w="100%" justifyContent="space-between" flexDirection="column">
-            <Text fontSize={22}>Repositórios</Text>
+            <Text fontSize={[18,22]}>Repositórios</Text>
             <Box mt={4}>
               {getRepos.map(res => {
                 return (
                   <Flex gap={5} alignItems="center" justifyContent="space-between" key={res.id}>
-                    <LinkChakra href={res.html_url} isExternal >{res.name}</LinkChakra>
+                    <LinkChakra href={res.html_url} isExternal fontSize={[10,16]}>{res.name}</LinkChakra>
                     <Flex justifyContent="center" alignItems="center" gap={2}>
-                      <Text>{res.stargazers_count}</Text>
+                      <Text >{res.stargazers_count}</Text>
                       <RiStarSLine size="24" style={{ color: "orange" }} />
                     </Flex>
                   </Flex>

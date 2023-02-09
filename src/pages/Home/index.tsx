@@ -54,7 +54,7 @@ export function Home() {
           </Flex>
         </Stack>
       </Flex>
-      <Button type="link" value="Perfil" to="/profile" handleGetDatas={handleGetDatas} />
+      <Button type="link" value="Perfil" linkTo="/profile" handleGetDatas={handleGetDatas} />
     </Flex>
   )
 }
