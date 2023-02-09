@@ -1,7 +1,7 @@
-import { Flex, Input, Stack, Text, Spinner, Box } from "@chakra-ui/react";
+import { Flex, Input, Stack, Text, Spinner, Button as ButtonChakra } from "@chakra-ui/react";
 import React,{ useState } from "react";
 import { AiFillGithub } from 'react-icons/ai';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Button } from '../../components/Button'
 import { gitHubApi } from "../../services/api";
@@ -56,8 +56,8 @@ export function Home() {
             </Flex>
           </Stack>
         </Flex>
-        <Button type="link" value="Perfil" linkTo="/profile" handleGetDatas={handleGetDatas} />
-      </Flex>
+          <ButtonChakra as={Link} to="/profile" maxW={320} w="100%" variant='outline' size="md" > Perfil </ButtonChakra>
+        </Flex>
       <Bottom />
     </Flex>
   )

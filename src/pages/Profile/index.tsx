@@ -1,10 +1,10 @@
-import { Box, Flex, Image, Link as LinkChakra, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Link as LinkChakra, Stack, Text, Button as ButtonChakra} from "@chakra-ui/react";
 import { RiStarSLine } from 'react-icons/ri'
 
 import useGetDatas from "../../hook/useGetDatas"
 import { BoxItemCounter } from "../../components/BoxItemCounter";
-import { Button } from "../../components/Button";
 import { InfoItem } from "../../components/InfoItem";
+import { Link } from "react-router-dom";
 
 export function Profile() {
   const getDatas = useGetDatas((state) => state.getDatasApi)
@@ -22,8 +22,7 @@ export function Profile() {
   if (getDatas.login !== "") {
     return (
       <Flex p={10} alignItems="center" justifyContent="center" flexDirection="column">
-
-        <Button linkTo="/" type="link" value="Voltar" />
+        <ButtonChakra as={Link} to="/" maxW={320} w="100%" variant='outline' size="md" > Voltar </ButtonChakra>
         <Flex bg="gray.800" mt={4} p="8" maxW={600} w="100%" borderRadius={8} justifyContent="center" alignItems="center" flexDirection="column">
           <Image src={getDatas.avatar_url} alt='Dan Abramov' w="52" border="4px" borderColor="gray.400" borderRadius="100%" />
           <Stack>
@@ -67,7 +66,7 @@ export function Profile() {
     return (
       <Flex justifyContent="center" alignItems="center" h="100vh" flexDirection="column" gap={6}>
         <Text>Selecione um perfil do GitHub</Text>
-        <Button linkTo="/" type="link" value="Voltar" />
+        <ButtonChakra as={Link} to="/" variant='outline' size="md" > Voltar </ButtonChakra>
       </Flex>
     )
   }
