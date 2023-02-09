@@ -8,7 +8,7 @@ interface ButtonProps{
   linkTo?: string | undefined;
 }
 
-export function Button({value,handleGetDatas, type, link}:ButtonProps){
+export function Button({value,handleGetDatas, type, linkTo}:ButtonProps){
   if(type === "link") return (<ButtonChackra as={Link} variant='outline' to={linkTo} maxW="320" w="100%" >{value}</ButtonChackra>)
   
   return <ButtonChackra  colorScheme='pink' size="md" onClick={handleGetDatas}>{value}</ButtonChackra>

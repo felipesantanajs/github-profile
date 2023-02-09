@@ -68,7 +68,7 @@ export function Profile() {
     return (
       <Flex justifyContent="center" alignItems="center" h="100vh" flexDirection="column" gap={6}>
         <Text>Selecione um perfil do GitHub</Text>
-        <Button to="/" type="link" value="Voltar" />
+        <Button linkTo="/" type="link" value="Voltar" />
       </Flex>
     )
   }
