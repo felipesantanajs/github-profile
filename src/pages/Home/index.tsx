@@ -51,12 +51,12 @@ export function Home(){
             {isLoding ? <Spinner color='red.500' /> : <></>}
           </Flex>
           <Flex gap="2">
-              <Input type="text" placeholder='extra small size' size='md' backgroundColor='gray.200' onChange={ e => setGetValues(e.target.value) }/> 
+              <Input type="text" placeholder='Buscar' size='md' backgroundColor='gray.200' color="gray.800" onChange={ e => setGetValues(e.target.value) }/> 
               <Button type="ts" value="Buscar" handleGetDatas={handleGetDatas}/>
           </Flex>
           </Stack>
       </Flex>
-      <Button type="link" value="Perfil" handleGetDatas={handleGetDatas} simuLateClick/>
+      <Button type="link" value="Perfil" to="/profile" handleGetDatas={handleGetDatas}/>
     </Flex>
   )
 }
