@@ -16,7 +16,7 @@ export function Profile() {
   })
 
   // Consoles
-  // console.log('datas->', getDatas);
+   console.log('datas->', getDatas);
   // console.log('repos->', getRepos);
   
   if (getDatas.login !== "") {
@@ -33,7 +33,7 @@ export function Profile() {
             <InfoItem type="user" production={getDatas.login}/>
             <InfoItem type="location" production={getDatas.location}/>
             {getDatas.email !== null ? <InfoItem type="email" production={getDatas.email} /> : <></>}
-            {getDatas.blog !== null ?<InfoItem type="blog" production={getDatas.blog}/> :<></>}
+            {getDatas.blog !== "" ?<InfoItem type="blog" production={getDatas.blog}/> :<></>}
             {getDatas.twitter_username !== null ?<InfoItem type="twitter" production={getDatas.twitter_username}/> :<></>}
           </Stack>
 
