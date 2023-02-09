@@ -16,7 +16,7 @@ export function Profile() {
   })
 
   // Consoles
-   console.log('datas->', getDatas);
+   //console.log('datas->', getDatas);
   // console.log('repos->', getRepos);
   
   if (getDatas.login !== "") {
@@ -24,7 +24,6 @@ export function Profile() {
       <Flex p={10} alignItems="center" justifyContent="center" flexDirection="column">
 
         <Button linkTo="/" type="link" value="Voltar" />
-        
         <Flex bg="gray.800" mt={4} p="8" maxW={600} w="100%" borderRadius={8} justifyContent="center" alignItems="center" flexDirection="column">
           <Image src={getDatas.avatar_url} alt='Dan Abramov' w="52" border="4px" borderColor="gray.400" borderRadius="100%" />
           <Stack>
