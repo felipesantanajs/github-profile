@@ -1,6 +1,7 @@
 import {create} from 'zustand'
 
 interface PrincipalDatasType{
+  id?:number;
   name:string;
   avatar_url:string;
   public_repos: number;
@@ -9,8 +10,9 @@ interface PrincipalDatasType{
   bio:string;
   login:string;
   location:string;
-  email:string;
-  twitter_username:string;
+  email?:string;
+  twitter_username?:string;
+  blog?:string;
 }
 
 interface DatasReposType{
@@ -26,7 +28,7 @@ interface useGetDatasProps{
   setGetDatasReposApi: (datas:any) => void;
 }
 const useGetDatas = create<useGetDatasProps>((set) =>({
-  getDatasApi: {},
+  getDatasApi: {name:"", avatar_url:"", bio:"",email:"",followers:0,following:0,public_repos:0,location:"",login:"",twitter_username:""},
   getDatasReposApi: [],
   
   setGetDatasApi: (values) =>{
