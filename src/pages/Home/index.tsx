@@ -1,4 +1,4 @@
-import { Flex, Input, Stack, Text, Spinner } from "@chakra-ui/react";
+import { Flex, Input, Stack, Text, Spinner, Box } from "@chakra-ui/react";
 import React,{ useState } from "react";
 import { AiFillGithub } from 'react-icons/ai';
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from '../../components/Button'
 import { gitHubApi } from "../../services/api";
 import useGetDatas from "../../hook/useGetDatas";
+import { Bottom } from "../../components/Bottom";
 
 
 export function Home() {
@@ -41,20 +42,23 @@ export function Home() {
   }
   return (
     <Flex flexDirection="column" gap="10" w="100vw" h="100vh" align="center" justify="center">
-      <Flex w="100%" maxWidth={390} bg="gray.800" p="8" flexDirection="column" borderRadius={8} >
-        <Stack spacing={4}>
-          <Flex alignItems="center" justifyContent="space-between">
-            <AiFillGithub size={30} />
-            <Text>Buscar Perfil Github</Text>
-            {isLoding ? <Spinner color='red.500' /> : <></>}
-          </Flex>
-          <Flex gap="2">
-            <Input type="text" placeholder='Buscar' size='md' backgroundColor='gray.200' color="gray.800" onChange={e => setGetValues(e.target.value)} />
-            <Button type="ts" value="Buscar" handleGetDatas={handleGetDatas} />
-          </Flex>
-        </Stack>
+      <Flex justifyContent="center" alignItems="center" gap={6} flexDirection="column">
+        <Flex w="100%" maxWidth={390} bg="gray.800" p="8" flexDirection="column" borderRadius={8} >
+          <Stack spacing={4}>
+            <Flex alignItems="center" justifyContent="space-between">
+              <AiFillGithub size={30} />
+              <Text>Buscar Perfil Github</Text>
+              {isLoding ? <Spinner color='red.500' /> : <></>}
+            </Flex>
+            <Flex gap="2">
+              <Input type="text" placeholder='Buscar' size='md' backgroundColor='gray.200' color="gray.800" onChange={e => setGetValues(e.target.value)} />
+              <Button type="ts" value="Buscar" handleGetDatas={handleGetDatas} />
+            </Flex>
+          </Stack>
+        </Flex>
+        <Button type="link" value="Perfil" linkTo="/profile" handleGetDatas={handleGetDatas} />
       </Flex>
-      <Button type="link" value="Perfil" linkTo="/profile" handleGetDatas={handleGetDatas} />
+      <Bottom />
     </Flex>
   )
 }
