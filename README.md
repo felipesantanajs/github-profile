@@ -30,6 +30,12 @@ This project was developed with the following technologies:
 - Zustand
 - Axios
 
+## ✨ Link Access - Published Vercel
+```
+$ https://github-profile-feelipesantana.vercel.app
+
+```
+
 ## ⚙️ How to run
 
 ```
@@ -47,3 +53,5 @@ $ Node - 18.12.0
 $ NPM - 8.19.2
 
 ```
+
+
